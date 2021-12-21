@@ -25,7 +25,7 @@ public class raycastRefreshGauge : MonoBehaviour
                         Debug.Log("raycastRefreshGauge Ray cast hit distance tag gauge");
                         Debug.Log("raycast hit object with name = " + hit.collider.gameObject.name);
                         Debug.Log("Child 2 is named" + hit.collider.gameObject.transform.GetChild(2).gameObject.name);
-                        string timestampText = hit.collider.gameObject.transform.GetChild(2).gameObject.GetComponent<showTimeStamp>().timeStamp.text;
+                        string timestampText = hit.collider.gameObject.transform.GetChild(2).gameObject.GetComponent<showTimeStamp>().timeToPrint;
                         Debug.Log("string initiated" + "  " + timestampText);
                         if (timestampText == "")
                         {

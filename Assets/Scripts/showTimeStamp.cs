@@ -12,11 +12,12 @@ public class showTimeStamp : MonoBehaviour
 
     void Awake() {
         timeStamp = GetComponent<TMPro.TextMeshPro>();
-    }
-    public void updateTMPro() {
         timeStamp.text = timeToPrint;
     }
+    public void updateTMPro() {
+        timeStamp.gameObject.SetActive(true);
+    }
     public void hideTMPro() {
-        timeStamp.text = "";
+        timeStamp.gameObject.SetActive(false);
     }
 }
