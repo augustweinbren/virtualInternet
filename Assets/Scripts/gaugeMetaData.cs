@@ -15,7 +15,7 @@ public class gaugeMetaData : MonoBehaviour
     bool latAccessible = false;
     bool lonAccessible = false;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         lastUpdateTime = System.DateTime.Now;
         updateTimes = new List<System.DateTime>();
@@ -89,6 +89,6 @@ public class gaugeMetaData : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

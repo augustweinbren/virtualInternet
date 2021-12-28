@@ -1,35 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &232910134869759674
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2686054373200427588}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2686054373200427588
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 232910134869759674}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2094118077924502277}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2540686952131406719
 GameObject:
   m_ObjectHideFlags: 0
@@ -47,6 +17,7 @@ GameObject:
   - component: {fileID: 2237743171665801177}
   - component: {fileID: 5597179563262638130}
   - component: {fileID: 3924469548390280731}
+  - component: {fileID: 7677458872387671783}
   m_Layer: 0
   m_Name: InternetARObj
   m_TagString: gauge
@@ -66,7 +37,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7708123490704464178}
-  - {fileID: 2686054373200427588}
   - {fileID: 6374424872424496064}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -209,7 +179,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2540686952131406719}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 83dcd8dace8b7fe449d796b980cb121d, type: 3}
   m_Name: 
@@ -218,10 +188,10 @@ MonoBehaviour:
   onSelected:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7092785036356412283}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 2613551295797088878}
+        m_TargetAssemblyTypeName: gaugeLabelController, Assembly-CSharp
+        m_MethodName: printMetaData
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -233,10 +203,10 @@ MonoBehaviour:
   onDeselected:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7092785036356412283}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 2613551295797088878}
+        m_TargetAssemblyTypeName: gaugeLabelController, Assembly-CSharp
+        m_MethodName: hideMetaData
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -264,6 +234,22 @@ MonoBehaviour:
   onSelectedFingerUp:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7677458872387671783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2540686952131406719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8057697b4167d44b1bbfaeda02160f7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  latitude: 0
+  longitude: 0
+  altitude: 0
+  latLonAltitudeAccessible: 0
 --- !u!1 &7092785036356412283
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,7 +261,7 @@ GameObject:
   - component: {fileID: 6374424872424496064}
   - component: {fileID: 8046898219684873470}
   - component: {fileID: 332575826690951291}
-  - component: {fileID: 3599171968634237972}
+  - component: {fileID: 2613551295797088878}
   m_Layer: 0
   m_Name: TimeStamp
   m_TagString: Untagged
@@ -291,15 +277,15 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7092785036356412283}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.34}
+  m_LocalPosition: {x: 0, y: 0, z: -0.26}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2094118077924502277}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.106, y: 0.062}
+  m_AnchoredPosition: {x: 0.24, y: 0.062}
   m_SizeDelta: {x: 0.7438, y: 1.0638}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &8046898219684873470
@@ -363,7 +349,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: 'Most Recent Internet Speed Test: 07/30/2021 04:30:21
+
+    Latitude: 0
+
+    Longitude:
+
+    Altitude'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -426,7 +418,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0.17852528, w: 0.793361}
+  m_margin: {x: -1.0804318, y: -0.25368428, z: -0.65230256, w: 0.793361}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -435,7 +427,7 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
---- !u!114 &3599171968634237972
+--- !u!114 &2613551295797088878
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -444,12 +436,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7092785036356412283}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec52c8d8157b9424fb1728e34e84ab4c, type: 3}
+  m_Script: {fileID: 11500000, guid: 5448f9d872a3d408790ba621a6d0383a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToPrint: 
-  timeStamp: {fileID: 0}
-  hitPose: {fileID: 0}
+  gaugeMetaData: {fileID: 7677458872387671783}
+  gaugeLabel: {fileID: 0}
 --- !u!1001 &2794633286285992312
 PrefabInstance:
   m_ObjectHideFlags: 0
